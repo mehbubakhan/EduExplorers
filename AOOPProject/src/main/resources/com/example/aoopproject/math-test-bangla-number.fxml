@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aoopproject.MathTestBanglaNumberController">
+
+    <children>
+        <ImageView fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Image/CommonPage.png" />
+            </image></ImageView>
+        <!-- Header -->
+        <Label fx:id="titleLabel" layoutX="16.0" layoutY="16.0" text="গণিত পরীক্ষা - সংখ্যা">
+            <font><Font name="Segoe UI Semibold" size="20" /></font>
+        </Label>
+
+        <Label layoutX="738.0" layoutY="22.0" style="-fx-font-weight: bold;" text="সময়:" />
+        <Label fx:id="timerLabel" layoutX="778.0" layoutY="19.0" style="-fx-font-size: 14px;" text="—" />
+        <Label fx:id="progressLabel" layoutX="829.0" layoutY="20.0" text="প্রশ্ন 0/15   নম্বর: 0">
+            <font><Font name="Segoe UI" size="14" /></font>
+        </Label>
+
+        <!-- Question -->
+        <Label fx:id="questionLabel" layoutX="16.0" layoutY="70.0" prefWidth="828.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="‘শুরু’ চাপুন, ভয়েস শুনুন এবং সঠিক উত্তর নির্বাচন করুন।" wrapText="true" />
+
+        <!-- Options (2x2 absolute placement) -->
+        <Button fx:id="opt1" layoutX="67.0" layoutY="124.0" onAction="#handleOptionClick" prefHeight="130.0" prefWidth="360.0" style="-fx-font-size: 20px;" wrapText="true" />
+        <Button fx:id="opt2" layoutX="590.0" layoutY="124.0" onAction="#handleOptionClick" prefHeight="130.0" prefWidth="360.0" style="-fx-font-size: 20px;" wrapText="true" />
+        <Button fx:id="opt3" layoutX="67.0" layoutY="280.0" onAction="#handleOptionClick" prefHeight="130.0" prefWidth="360.0" style="-fx-font-size: 20px;" wrapText="true" />
+        <Button fx:id="opt4" layoutX="590.0" layoutY="280.0" onAction="#handleOptionClick" prefHeight="130.0" prefWidth="360.0" style="-fx-font-size: 20px;" wrapText="true" />
+
+        <!-- Feedback -->
+        <Label fx:id="feedbackLabel" layoutX="16.0" layoutY="430.0" prefWidth="828.0" style="-fx-font-size: 15px; -fx-font-weight: bold;" text="" />
+
+        <!-- Controls -->
+        <Button fx:id="startButton" layoutX="67.0" layoutY="471.0" onAction="#handleExamStart" text="শুরু ▶" />
+        <Button fx:id="playButton" disable="true" layoutX="132.0" layoutY="471.0" onAction="#handlePlayQuestion" text="🔊 প্রশ্ন করুন" />
+        <Button fx:id="nextButton" disable="true" layoutX="230.0" layoutY="472.0" onAction="#handleNext" text="পরবর্তী ▶" />
+        <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="850.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Image/BackButton.png" />
+            </image>
+        </ImageView>
+
+        <Button fx:id="backButton" layoutX="850.0" layoutY="444.0" onAction="#BackToTest" prefHeight="80.0" prefWidth="100.0" style="-fx-background-color: transparent;" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane onDragDetected="#switchToRhyme" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aoopproject.EnglishRhymeController">
+
+    <children>
+        <ImageView fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Image/CommonPage.png" />
+            </image></ImageView>
+        <VBox spacing="12.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
+            <children>
+
+                <!-- Top bar -->
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Button fx:id="backButton" onAction="#BackToEnglishFormat" text="Back" />
+                        <MenuButton fx:id="chooseRhymeMenu" text="Choose Rhyme" />
+                        <Label fx:id="nowPlayingLabel" text="Now Playing: —" />
+                    </children>
+                </HBox>
+
+                <!-- Transport controls -->
+                <HBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <Button fx:id="playButton" onAction="#handlePlay" text="Play" />
+                        <Button fx:id="pauseButton" onAction="#handlePause" text="Pause" />
+                        <Button fx:id="resumeButton" onAction="#handleResume" text="Resume" />
+                        <Button fx:id="replayButton" onAction="#handleReplay" text="Replay" />
+                    </children>
+                </HBox>
+
+                <!-- Centered, large, outlined lyrics -->
+                <StackPane alignment="CENTER" VBox.vgrow="ALWAYS">
+                    <children>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" pannable="true" prefViewportHeight="380" prefViewportWidth="860">
+                            <content>
+                                <StackPane alignment="CENTER">
+                                    <children>
+                                        <TextFlow fx:id="lyricsFlow" lineSpacing="8" maxWidth="800" textAlignment="CENTER" />
+                                    </children>
+                                </StackPane>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </StackPane>
+
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

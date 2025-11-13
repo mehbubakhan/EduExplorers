@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aoopproject.BanglaMediumTestController">
+
+    <children>
+      <ImageView fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="false">
+         <image>
+            <Image url="@Image/CommonPage.png" />
+         </image></ImageView>
+        <VBox layoutX="34.0" layoutY="34.0" prefHeight="648.0" prefWidth="972.0" spacing="14" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <Label fx:id="titleLabel" text="বাংলা বর্ণ পরীক্ষা — মধ্যম">
+                    <font><Font name="Siyam Rupali" size="22" /></font>
+                </Label>
+                <Pane HBox.hgrow="ALWAYS" />
+                <Label style="-fx-font-weight: bold;" text="সময়:" />
+                <Label fx:id="timerLabel" style="-fx-font-size: 16px;" text="—" />
+                <Separator orientation="VERTICAL" />
+                <Label fx:id="progressLabel" text="প্রশ্ন ০/১৫   নম্বর: ০">
+                    <font><Font name="Siyam Rupali" size="16" /></font>
+                </Label>
+            </HBox>
+
+            <Label fx:id="questionLabel" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="👂 'শুরু করুন' চাপুন, শুনুন এবং সঠিক বর্ণ নির্বাচন করুন।" wrapText="true" />
+
+            <GridPane hgap="12" vgap="12">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50" />
+                    <ColumnConstraints percentWidth="50" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints percentHeight="50" />
+                    <RowConstraints percentHeight="50" />
+                </rowConstraints>
+
+                <Button fx:id="opt1" onAction="#handleOptionClick" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Button fx:id="opt2" onAction="#handleOptionClick" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Button fx:id="opt3" onAction="#handleOptionClick" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Button fx:id="opt4" onAction="#handleOptionClick" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            </GridPane>
+
+            <Label fx:id="feedbackLabel" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="" />
+
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <Button fx:id="examStartButton" onAction="#handleExamStart" text="শুরু করুন ▶" />
+                <Button fx:id="playQuestionButton" disable="true" onAction="#handlePlayQuestion" text="🔊 প্রশ্ন করুন" />
+                <Button fx:id="nextButton" disable="true" onAction="#handleNext" text="পরবর্তী ▶" />
+                <Pane prefHeight="107.0" prefWidth="633.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="579.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/BackButton.png" />
+                     </image>
+                  </ImageView>
+                      <Button fx:id="backButton" layoutX="579.0" layoutY="14.0" onAction="#BackToMenu" prefHeight="80.0" prefWidth="100.0" style="-fx-background-color: transparent;" />
+               </children></Pane>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

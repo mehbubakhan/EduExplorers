@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane prefHeight="600" prefWidth="1000.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aoopproject.BanglaBenjonbornoController">
+
+    <!-- ==== Top controls (no ToolBar/BorderPane) ==== -->
+    <children>
+        <ImageView fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="false" />
+
+        <!-- Back -->
+        <Button layoutX="12" layoutY="12" onAction="#BackToBanglaFormat" text="পিছনে" />
+
+        <!-- Letter chooser -->
+        <MenuButton fx:id="letterMenu" layoutX="80" layoutY="12" prefWidth="150" text="ব্যঞ্জন বাছাই করুন" />
+
+        <!-- Color + tools -->
+        <ColorPicker fx:id="colorPicker" layoutX="245" layoutY="12" />
+        <ToggleButton fx:id="pencilToggle" layoutX="395" layoutY="12" text="কলম" />
+        <ToggleButton fx:id="eraserToggle" layoutX="445" layoutY="12" text="ইরেজার" />
+
+        <!-- Retry (disabled initially) -->
+        <Button fx:id="retryButton" disable="true" layoutX="515" layoutY="12" onAction="#handleRetry" text="🔁 আবার শুরু" />
+
+        <!-- Progress -->
+        <ProgressBar fx:id="progressBar" layoutX="630" layoutY="16" prefWidth="240" />
+        <Label fx:id="percentLabel" layoutX="880" layoutY="15" text="0%" />
+
+        <!-- Play voice -->
+        <Button fx:id="playVoiceButton" disable="true" layoutX="944.0" layoutY="12.0" onAction="#handlePlayVoice" text="শুনুন" />
+
+        <!-- ==== Drawing area (center) ==== -->
+        <StackPane fx:id="canvasHolder" layoutX="12.0" layoutY="61.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="61.0">
+            <children>
+                <!-- Paint layer -->
+                <Canvas fx:id="drawCanvas" />
+                <!-- Grid/outline overlay -->
+                <Canvas fx:id="gridCanvas" mouseTransparent="true" />
+            </children>
+        </StackPane>
+
+    </children>
+</AnchorPane>

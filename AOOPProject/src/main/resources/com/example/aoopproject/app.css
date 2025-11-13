@@ -1,0 +1,55 @@
+.button-89{
+    /* configurable tokens */
+    --b: 3px;          /* border thickness   */
+    --s: .45em;        /* corner “size”      */
+    --color: #373B44;  /* accent color       */
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    font: 600 16px/1 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--color);
+
+    /* conic-gradient frame trick */
+    --_p: var(--s);
+    background:
+            conic-gradient(from 90deg at var(--b) var(--b), transparent 90deg, var(--color) 0)
+            var(--_p) var(--_p) /
+      calc(100% - var(--b) - 2*var(--_p))
+            calc(100% - var(--b) - 2*var(--_p));
+
+    border: 0;
+    outline: var(--b) solid transparent;
+    outline-offset: .6em;
+
+    transition:
+            background-position .3s linear,
+            outline-color .2s,
+            outline-offset .2s,
+            color .2s,
+            background-color .2s;
+
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+    --_p: 0px;                 /* slide the frame in */
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.button-89:active{
+    background-color: var(--color);
+    color: #fff;
+}
+
+/* Optional: fallback for browsers without conic-gradient support */
+@supports not (background: conic-gradient(red, blue)){
+    .button-89{
+        background: transparent;
+        border: var(--b) solid var(--color);
+        outline: none;
+    }
+}

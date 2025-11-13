@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.aoopproject.MathTestFormatController">
+
+    <children>
+        <ImageView fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Image/CommonPage.png" />
+            </image></ImageView>
+        <!-- Title -->
+        <Label layoutX="318.0" layoutY="35.0" style="-fx-font-weight: bold;" text="ধাপ নির্বাচন করুন / Select Level" textFill="#1f709c">
+            <font><Font name="Segoe UI Semibold" size="26" /></font>
+        </Label>
+        <ImageView fitHeight="50.0" fitWidth="200.0" layoutX="134.0" layoutY="145.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Image/pink_button.png" />
+            </image></ImageView>
+
+        <!-- Bangla Buttons -->
+        <Button layoutX="134.0" layoutY="145.0" onAction="#goBanglaNumber" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="সংখ্যা" textFill="#1f709c">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font></Button>
+        <ImageView fitHeight="50.0" fitWidth="200.0" layoutX="400.0" layoutY="145.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Image/pink_button.png" />
+            </image></ImageView>
+        <Button layoutX="400.0" layoutY="145.0" onAction="#goBanglaNumberSpelling" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="সংখ্যার বানান" textFill="#1f709c">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font></Button>
+        <ImageView fitHeight="50.0" fitWidth="200.0" layoutX="667.0" layoutY="145.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Image/pink_button.png" />
+            </image></ImageView>
+        <Button layoutX="667.0" layoutY="145.0" onAction="#goBanglaLevel1" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="ধাপ ১" textFill="#1f709c">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font></Button>
+        <ImageView fitHeight="50.0" fitWidth="200.0" layoutX="134.0" layoutY="241.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Image/pink_button.png" />
+            </image></ImageView>
+
+        <!-- English Buttons -->
+        <Button layoutX="134.0" layoutY="241.0" onAction="#goNumber" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Number" textFill="#1f709c">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font></Button>
+        <ImageView fitHeight="50.0" fitWidth="200.0" layoutX="400.0" layoutY="239.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Image/pink_button.png" />
+            </image></ImageView>
+        <Button layoutX="400.0" layoutY="239.0" onAction="#goSpelling" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Spelling" textFill="#1f709c">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font></Button>
+        <ImageView fitHeight="50.0" fitWidth="200.0" layoutX="667.0" layoutY="241.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Image/pink_button.png" />
+            </image></ImageView>
+        <Button layoutX="667.0" layoutY="241.0" onAction="#goLevel1" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Level 1" textFill="#1f709c">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font></Button>
+        <ImageView fitHeight="50.0" fitWidth="200.0" layoutX="274.0" layoutY="364.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Image/pink_button.png" />
+            </image></ImageView>
+
+        <!-- Mixed / All Modes -->
+        <Button layoutX="274.0" layoutY="364.0" onAction="#goMedium" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Medium" textFill="#1f709c">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font></Button>
+        <ImageView fitHeight="50.0" fitWidth="200.0" layoutX="554.0" layoutY="364.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Image/pink_button.png" />
+            </image></ImageView>
+        <Button layoutX="554.0" layoutY="364.0" onAction="#goHard" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Hard" textFill="#1f709c">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font></Button>
+        <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="817.0" layoutY="454.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Image/BackButton.png" />
+            </image></ImageView>
+
+        <!-- Back -->
+        <Button layoutX="817.0" layoutY="454.0" onAction="#BackToTest" prefHeight="80.0" prefWidth="100.0" style="-fx-background-color: transparent;" />
+        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="62.0" layoutY="389.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Gifs/cloud.gif" />
+            </image></ImageView>
+        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="767.0" layoutY="54.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Gifs/cloud.gif" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="693.0" layoutY="414.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@Gifs/cloud.gif" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

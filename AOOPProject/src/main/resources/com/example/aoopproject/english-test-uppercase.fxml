@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.aoopproject.EnglishTestUppercaseController">
+
+    <children>
+        <!-- Background -->
+        <ImageView fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="false">
+            <image><Image url="@Image/CommonPage.png"/></image>
+        </ImageView>
+
+        <!-- Header -->
+        <Label fx:id="titleLabel" layoutX="20.0" layoutY="18.0" text="Alphabet Quiz — UPPERCASE">
+            <font><Font name="Segoe UI Semibold" size="22"/></font>
+        </Label>
+
+        <Label layoutX="711.0" layoutY="31.0" style="-fx-font-weight: bold;" text="Timer:" />
+        <Label fx:id="timerLabel" layoutX="770.0" layoutY="27.0" style="-fx-font-size: 16px;" text="—" />
+        <Label fx:id="progressLabel" layoutX="815.0" layoutY="30.0" text="Q 0/15   Score: 0">
+            <font><Font name="Segoe UI" size="16"/></font>
+        </Label>
+
+        <!-- Instruction -->
+        <Label fx:id="questionLabel" layoutX="20.0" layoutY="78.0" prefWidth="820.0"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"
+               text="👂 Press Start, listen, and select the correct letter (____)." wrapText="true"/>
+
+        <!-- Options (2x2) -->
+        <Button fx:id="opt1" layoutX="53.0" layoutY="148.0" onAction="#handleOptionClick"
+                prefHeight="70.0" prefWidth="410.0" text="A"/>
+        <Button fx:id="opt2" layoutX="524.0" layoutY="148.0" onAction="#handleOptionClick"
+                prefHeight="70.0" prefWidth="410.0" text="B"/>
+        <Button fx:id="opt3" layoutX="53.0" layoutY="236.0" onAction="#handleOptionClick"
+                prefHeight="70.0" prefWidth="410.0" text="C"/>
+        <Button fx:id="opt4" layoutX="524.0" layoutY="236.0" onAction="#handleOptionClick"
+                prefHeight="70.0" prefWidth="410.0" text="D"/>
+
+        <!-- Feedback -->
+        <Label fx:id="feedbackLabel" layoutX="20.0" layoutY="322.0" prefWidth="820.0"
+               style="-fx-font-size: 16px; -fx-font-weight: bold;" text=""/>
+
+        <!-- Bottom controls -->
+        <Button fx:id="startButton" layoutX="38.0" layoutY="366.0" onAction="#handleExamStart" text="Start ▶"/>
+        <Button fx:id="playButton" disable="true" layoutX="103.0" layoutY="366.0" onAction="#handlePlayQuestion" text="🔊 Play Question"/>
+        <Button fx:id="nextButton" disable="true" layoutX="221.0" layoutY="366.0" onAction="#handleNext" text="Next ▶"/>
+
+        <!-- Back -->
+        <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="847.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
+            <image><Image url="@Image/BackButton.png"/></image>
+        </ImageView>
+        <Button fx:id="backButton" layoutX="840.0" layoutY="379.0" onAction="#BackToTest"
+                prefHeight="80.0" prefWidth="100.0" style="-fx-background-color: transparent;"/>
+    </children>
+</AnchorPane>
